@@ -20,7 +20,7 @@ public class BoardDAO extends JDBConnect {
 		String query = "SELECT COUNT(*) FROM BOARD";
 		if (map.get("searchWord") != null) {
 			query += " WHERE " + map.get("searchField") + " "
-					+ " LIKE '%" + map.get("searchWord") + "%;";
+					+ " LIKE '%" + map.get("searchWord") + "%'";
 		}
 		
 		try {

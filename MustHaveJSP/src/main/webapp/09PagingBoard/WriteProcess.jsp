@@ -13,12 +13,12 @@ dto.setContent(content);
 dto.setId(session.getAttribute("UserId").toString());
 
 BoardDAO dao = new BoardDAO(application);
-// int iResult = dao.insertWrite(dto);
-int iResult = 0;
-for (int i = 1; i <= 100; i++) {
-	dto.setTitle(title + "-" + i);
-	iResult = dao.insertWrite(dto);
-}
+int iResult = dao.insertWrite(dto);
+// 더미데이터 100개 만들기 안 쓸땐 주석
+// for (int i = 1; i <= 100; i++) {
+// 	dto.setTitle(title + "-" + i);
+// 	iResult = dao.insertWrite(dto);
+// }
 dao.close();
 
 if (iResult == 1) {
